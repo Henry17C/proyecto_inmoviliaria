@@ -39,6 +39,10 @@ public class Inmueble {
 	 @ManyToOne
 	 @JoinColumn(name = "inmv_id_vendedor")
 	 private Vendedor vendedor;
+	 
+	 @ManyToOne
+	 @JoinColumn(name = "inmv_id_ciudad")
+	 private Ciudad ciudad;
 
 
 	public Integer getId() {
