@@ -8,6 +8,7 @@ import com.example.demo.repositoty.modelo.Ciudad;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -66,6 +67,17 @@ public class CiudadRepoImpl implements ICiudadRepo {
 
 
 				return queryFinal.getSingleResult();
+	}
+
+	@Override
+	public Ciudad seleccionarCiudad(String nombre) {
+		// TODO Auto-generated method stub
+		TypedQuery<Ciudad> query= this.entityManager.createQuery("Select c from Ciudad c Where c.nombre= :nombre", Ciudad.class);
+		query.setParameter("nombre", nombre);
+		Ciudad ciudad=query.getSingleResult();
+		ciudad.getInmuebles().size();
+	
+		return ciudad;
 	}
 
 }

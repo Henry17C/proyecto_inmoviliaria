@@ -13,4 +13,6 @@ public interface IInmuebleRepository {
 	public List<InmuebleDTO> seleccionarPorPrecioDTO(BigDecimal precio);
 	public List<InmuebleDTO> seleccionarPorPrecioDTO2(BigDecimal precio);
 	
+
+	
 }

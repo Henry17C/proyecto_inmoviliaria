@@ -10,7 +10,7 @@ public interface ICiudadService {
 	public void ingresar( Ciudad ciudad);
 	public Ciudad buscar(String nombre, String cabezeraCantonal, Integer catidadHabitantes, BigDecimal salarioPromedio, Double edadPromedio );
 
-	
+	public Ciudad seleccionarCiudad(String nombre);
 	
 	
 

@@ -10,6 +10,7 @@ import com.example.demo.repositoty.modelo.dto.InmuebleDTO;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 
@@ -43,5 +44,7 @@ public class InmuebleRepositoryImpl implements IInmuebleRepository{
 		
 		return query.getResultList();
 	}
+
+
 
 }

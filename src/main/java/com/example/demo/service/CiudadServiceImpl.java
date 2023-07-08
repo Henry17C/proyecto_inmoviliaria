@@ -27,4 +27,10 @@ public class CiudadServiceImpl implements ICiudadService {
 		return ciudadRepo.buscar(nombre, cabezeraCantonal, catidadHabitantes, salarioPromedio, edadPromedio);
 	}
 
+	@Override
+	public Ciudad seleccionarCiudad(String nombre) {
+		// TODO Auto-generated method stub
+		return ciudadRepo.seleccionarCiudad(nombre);
+	}
+
 }

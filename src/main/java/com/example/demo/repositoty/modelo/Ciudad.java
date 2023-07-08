@@ -5,6 +5,7 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -38,7 +39,7 @@ public class Ciudad {
 	@Column(name = "ciud_edadPromedio")
 	private Double edadPromedio;
 	
-	@OneToMany(mappedBy = "ciudad")
+	@OneToMany(mappedBy = "ciudad", fetch = FetchType.LAZY)
 	private List<Inmueble> inmuebles;
 	
 	
