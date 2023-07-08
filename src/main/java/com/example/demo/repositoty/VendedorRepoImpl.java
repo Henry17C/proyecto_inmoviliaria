@@ -1,6 +1,7 @@
 package com.example.demo.repositoty;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -49,5 +50,35 @@ public class VendedorRepoImpl implements IVendedorRepo {
 		
 		return query.executeUpdate();
 	}
+	
+	
+	public List<Vendedor> seleccionarTodosPorNombreDTO(String nombre){
+		
+		
+		return null;
+	} 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

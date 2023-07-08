@@ -17,32 +17,59 @@ import jakarta.persistence.Table;
 @Entity
 @Table
 public class Inmueble {
-	@Id
-	@Column(name = "inmv_id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_inmv")
-	@SequenceGenerator(name = "seq_inmv", sequenceName = "seq_inmv", allocationSize = 1)
-	private Integer id;
+		@Id
+		@Column(name = "inmv_id")
+		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_inmv")
+		@SequenceGenerator(name = "seq_inmv", sequenceName = "seq_inmv", allocationSize = 1)
+		private Integer id;
+		
+		 @Column(name = "inmv_tipo")
+		private String tipo;
+		 
+		 @Column(name = "inmv_precio")
+		private BigDecimal precio;
+		 
+		 @Column(name = "inmv_fecha")
+		private LocalDateTime fecha;
+		 
 	
-	 @Column(name = "inmv_tipo")
-	private String tipo;
+		 @Column(name = "inmv_numHabitaciones")
+		 private Integer numHabitaciones;
 	 
-	 @Column(name = "inmv_precio")
-	private BigDecimal precio;
+
+		@Column(name = "inmv_descripcion")
+		private String descripcion;
+		 
+		 
+		 @ManyToOne
+		 @JoinColumn(name = "inmv_id_vendedor")
+		 private Vendedor vendedor;
+		 
+		 @ManyToOne
+		 @JoinColumn(name = "inmv_id_ciudad")
+		 private Ciudad ciudad;
 	 
-	 @Column(name = "inmv_fecha")
-	private LocalDateTime fecha;
 	 
-	 @Column(name = "inmv_descripcion")
-	private String descripcion;
-	 
-	 
-	 @ManyToOne
-	 @JoinColumn(name = "inmv_id_vendedor")
-	 private Vendedor vendedor;
-	 
-	 @ManyToOne
-	 @JoinColumn(name = "inmv_id_ciudad")
-	 private Ciudad ciudad;
+	 public Integer getNumHabitaciones() {
+		return numHabitaciones;
+	}
+
+
+	public void setNumHabitaciones(Integer numHabitaciones) {
+		this.numHabitaciones = numHabitaciones;
+	}
+
+
+	public Ciudad getCiudad() {
+		return ciudad;
+	}
+
+
+	public void setCiudad(Ciudad ciudad) {
+		this.ciudad = ciudad;
+	}
+
+
 
 
 	public Integer getId() {
