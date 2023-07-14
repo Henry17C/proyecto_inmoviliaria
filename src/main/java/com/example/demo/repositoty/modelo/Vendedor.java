@@ -44,6 +44,9 @@ public class Vendedor {
 	
 	@OneToMany(mappedBy = "vendedor")
 	private List<Inmueble> inmuebles;
+	
+	@OneToMany(mappedBy = "vendedor")
+	private List<Cliente> clientes;
 
 
 
